@@ -1,0 +1,78 @@
+{# templates/registration/register.html.twig #}
+{% extends "base.html.twig" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+
+
+    {#{% if errors%}#}
+        {#<span class="danger">{{ error.messageKey }} </span>#}
+    {#{% endif %}#}
+
+    {#{% if form.name.vars.errors|length > 0 %}#}
+        {#<ul class="form-errors name">#}
+            {#{% for error in form.name.vars.errors %}#}
+                {#{{ error }}#}
+            {#{% endfor %}#}
+        {#</ul>#}
+    {#{% endif %}#}
+    {#{{ dump(form_errors()) }}#}
+
+
+    {{ form_start(form,  {'attr': {'class': 'form-signin',novalidate:'novalidate'}}) }}
+    <div class="form-label-group">
+        {{ form_widget(form.email) }}
+        {{ form_label(form.email) }}
+        {{ form_errors(form.email) }}
+
+    </div>
+    <div class="form-label-group">
+        {{ form_widget(form.username) }}
+        {{ form_label(form.username) }}
+        {{ form_errors(form.username) }}
+
+    </div>
+    <div class="form-label-group">
+        {{ form_widget(form.password.first) }}
+        {{ form_label(form.password.first) }}
+        {{ form_errors(form.password.first) }}
+
+    </div>
+    <div class="form-label-group">
+        {{ form_widget(form.password.second) }}
+        {{ form_label(form.password.second) }}
+        {{ form_errors(form.password.second) }}
+
+    </div>
+    <br />
+    <button type="submit" class="btn btn-success">Register!</button>
+    {{ form_end(form) }}
+
+    {{ dump(form) }}
+
+{% endblock %}
+
+
+
+{#<form class="form-signin" action="{{ path('login') }}" method="POST">#}
+    {#<div class="text-center mb-4">#}
+
+        {#<h1 class="h3 mb-3 font-weight-normal">Login </h1>#}
+    {#</div>#}
+
+    {#<div class="form-label-group">#}
+        {#<input type="text" name="_username" autocomplete="none" value="{{ lastUsername }}" class="form-control" id="exampleInputUsername"  placeholder="Enter Username ..">#}
+
+        {#<label for="exampleInputUsername">Email address</label>#}
+    {#</div>#}
+
+    {#<div class="form-label-group">#}
+        {#<input type="password" autocomplete="none" name="_password" class="form-control" id="exampleInputPassword" placeholder="Password">#}
+        {#<label for="exampleInputPassword">Password</label>#}
+    {#</div>#}
+
+
+    {#<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>#}
+    {#<p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>#}
+{#</form>#}
