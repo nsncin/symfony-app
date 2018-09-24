@@ -16,7 +16,6 @@ class MyAccountController extends AbstractController
     {
         $users=$this->getUser();
 
-        var_dump($users->getUsername());
 
 
 
